@@ -4,21 +4,22 @@ import React from 'react'
 // Styling
 import './Sidebar.css'
 
+// Components
+import SidebarHeader from './SidebarHeader/SidebarHeader';
+import SidebarSearch from './SidebarSearch/SidebarSearch';
+import SidebarChat from './SidebarChats/SidebarChat';
+
 const Sidebar = () => {
     return (
         <div className='sidebar'>
-            <h1>Sidebar</h1>
+            <SidebarHeader />
+            <SidebarSearch />
 
-            {/* 
-                Sidebar Header
-                    Sidebar Header Avatar
-                    Sidebar Header Right Buttons
-
-                SearchBox
-
-                Chats
-             */}
-
+            <div className='sidebar__chats'>
+                <SidebarChat />
+                <SidebarChat />
+                <SidebarChat />
+            </div>
         </div>
     )
 }
