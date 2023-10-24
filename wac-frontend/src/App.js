@@ -1,12 +1,17 @@
+// Styling
 import './App.css';
+
+// Components
+import Sidebar from './components/Sidebar/Sidebar';
+import Chat from './components/Chat/Chat';
 
 function App() {
   return (
     <div className="app">
-      <h1>Lets build a MERN WhatsApp Clone</h1>
-
-      {/* Sidebar */}
-      {/* Chat Component */}
+      <div className='app_body'>
+        <Sidebar />
+        <Chat />
+      </div>
     </div>
   );
 }
