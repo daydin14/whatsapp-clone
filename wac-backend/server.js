@@ -12,7 +12,7 @@ app.use(express.json());
 
 // DB Config
 const dbName = 'WhatsApp-CloneDB';
-const password = '';
+const password = '6oJPCDbP5KPLkZ5f';
 const connection_url = `mongodb+srv://admin:${password}@cluster0.6ldodz3.mongodb.net/${dbName}?retryWrites=true&w=majority`;
 
 mongoose.connect(connection_url, {
@@ -35,7 +35,14 @@ app.post('/messages/new', async (req, res) => {
     }
 });
 
-
+app.get('/messages/sync', async (req, res) => {
+    try {
+        const data = await Messages.find();
+        res.status(200).send(data);
+    } catch (err) {
+        res.status(500).send(err);
+    }
+});
 
 // Listener
 app.listen(port, () => {
