@@ -1,25 +1,18 @@
 // Dependencies
-import React from 'react'
+import React from 'react';
 
-const ChatBody = () => {
+const ChatBody = ({ messages }) => {
     return (
         <div className='chat__body'>
-            <p className='chat__message'>
-                <span className='chat__name'>David</span>
-                This is a Message
-                <span className='chat__timestamp'>
-                    {new Date().toUTCString()}
-                </span>
-            </p>
-            <p className='chat__message chat__receiver'>
-                <span className='chat__name'>David</span>
-                This is a Message
-                <span className='chat__timestamp'>
-                    {new Date().toUTCString()}
-                </span>
-            </p>
+            {messages.map((message) => (
+                <p className={`chat__message ${message.received && 'chat__receiver'}`}>
+                    <span className='chat__name'>{message.name}</span>
+                    {message.message}
+                    <span className='chat__timestamp'>{message.timestamp}</span>
+                </p>
+            ))}
         </div>
-    )
-}
+    );
+};
 
-export default ChatBody
+export default ChatBody;
