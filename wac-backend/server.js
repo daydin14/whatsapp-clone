@@ -2,13 +2,23 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import Messages from './dbMessages.mjs';
+import cors from 'cors';
+import Pusher from 'pusher';
 
 // app configs
 const app = express();
 const port = process.env.PORT || 9000;
+const pusher = new Pusher({
+    appId: "1695913",
+    key: "bf1066bdbbcbe81fe129",
+    secret: "",
+    cluster: "us2",
+    useTLS: true
+});
 
 // middleware
 app.use(express.json());
+app.use(cors());
 
 // DB Config
 const dbName = 'WhatsApp-CloneDB';
@@ -18,6 +28,28 @@ const connection_url = `mongodb+srv://admin:${password}@cluster0.6ldodz3.mongodb
 mongoose.connect(connection_url, {
     useNewUrlParser: true,
     useUnifiedTopology: true
+});
+
+const db = mongoose.connection;
+db.once('open', () => {
+    console.log('DB is Connected');
+    const msgCollection = db.collection('messagecontents');
+    const changeStream = msgCollection.watch();
+
+    changeStream.on('change', (change) => {
+        console.log('A change occurred', change);
+        if (change.operationType === 'insert') {
+            const messageDetails = change.fullDocument;
+            pusher.trigger('messages', 'inserted', {
+                name: messageDetails.name,
+                message: messageDetails.message,
+                timestamp: messageDetails.timestamp,
+                received: messageDetails.received
+            });
+        } else {
+            console.log('Error triggering Pusher');
+        }
+    });
 });
 
 // API Routes
