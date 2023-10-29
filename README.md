@@ -6,7 +6,8 @@ This repository contains the code for a WhatsApp clone created following the tut
 
 ## Table of Contents
 
-- [Demo](#demo)
+<!-- - [Demo](#demo) -->
+
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Setup](#setup)
@@ -14,11 +15,11 @@ This repository contains the code for a WhatsApp clone created following the tut
 - [Contributing](#contributing)
 <!-- - [License](#license) -->
 
-## Demo
+<!-- ## Demo
 
 You can see a live demo of the project at [YourDemoLinkHere](https://yourdemolink.com).
 
-![WhatsApp Clone Demo](demo.gif)
+![WhatsApp Clone Demo](demo.gif) -->
 
 ## Features
 
@@ -36,7 +37,7 @@ You can see a live demo of the project at [YourDemoLinkHere](https://yourdemolin
 - Node.js: A runtime environment for running server-side JavaScript.
 - Firebase: Used for user authentication and real-time database functionality.
 - Material-UI: A popular UI framework for styling the application.
-- Socket.io: Enables real-time communication between clients and the server.
+- Pusher: Enables real-time communication between clients and the server.
 
 ## Setup
 
@@ -46,41 +47,57 @@ You can see a live demo of the project at [YourDemoLinkHere](https://yourdemolin
    git clone https://github.com/yourusername/whatsapp-clone.git
    ```
 
-2. Change to project directory:
+2. Change to frontend/client project directory:
 
    ```
-   cd whatsapp-clone
+   cd whatsapp-clone/wac-frontend
    ```
 
-3. Install server dependencies:
-
-   ```
-   npm install || npm i
-   ```
-
-4. Change to the 'client' directory:
-
-   ```
-   cd client
-   ```
-
-5. Install client dependencies:
+3. Install frontend/client dependencies:
 
    ```
    npm install || npm i
    ```
 
-6. Start the development server:
+4. Change to backend/server project directory:
+
+   ```
+   cd whatsapp-clone/wac-backend
+   ```
+
+5. Install backend/server dependencies:
+
+   ```
+   npm install || npm i
+   ```
+
+6. Start the backend development server:
+
+   You can install Nodemon globally using npm by running the following command:
+
+   ```
+   npm install -g nodemon
+   ```
+
+   Within `whatsapp-clone/wac-backend` run command:
+
+   ```
+   nodemon server.js
+   ```
+
+7. Start the frontend development client:
+
+   Within `whatsapp-clone/wac-frontend` run command:
 
    ```
    npm start
    ```
 
-7. Access the application at http://localhost:3000
+8. Access the application at http://localhost:3000
 
 ## Usage
 
-- Sign in or create a new account using Firebase authentication.
+- Login with Google Sign-in using Firebase authentication.
 - Create a new chat room or join an existing one.
 - Start sending and receiving real-time messages with other users in the chat room.
 
