@@ -7,11 +7,11 @@ This repository contains the code for a WhatsApp clone created following the tut
 ## Table of Contents
 
 <!-- - [Demo](#demo) -->
-
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Setup](#setup)
 - [Usage](#usage)
+- [Pictures](#pictures)
 - [Contributing](#contributing)
 <!-- - [License](#license) -->
 
@@ -100,6 +100,10 @@ You can see a live demo of the project at [YourDemoLinkHere](https://yourdemolin
 - Login with Google Sign-in using Firebase authentication.
 - Create a new chat room or join an existing one.
 - Start sending and receiving real-time messages with other users in the chat room.
+
+## Pictures
+<img width="500" height="300" alt="Login" src="https://github.com/daydin14/whatsapp-clone/assets/22377881/05a8d18c-749c-4a6f-9bdc-171e9cd8aba7">
+<img width="500" height="300" alt="WhatsApp" src="https://github.com/daydin14/whatsapp-clone/assets/22377881/83d76431-2050-4131-96b7-7354d9dd30d9">
 
 ## Contributing
 
