@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# FrontEnd
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Built with React](https://img.shields.io/badge/Built%20with-React-blue)](https://reactjs.org/)
+[![Built with Material-UI](https://img.shields.io/badge/Built%20with-Material--UI-0081CB)](https://material-ui.com/)
+[![Built with Axios](https://img.shields.io/badge/Built%20with-Axios-136ad6)](https://github.com/axios/axios)
+[![Built with Pusher](https://img.shields.io/badge/Built%20with-Pusher%20JS-6746d8)](https://pusher.com/)
+[![Built with Firebase](https://img.shields.io/badge/Built%20with-Firebase-orange)](https://firebase.google.com/)
+[![Google Analytics](https://img.shields.io/badge/Google%20Analytics-Enabled-blue)](https://analytics.google.com/)
+[![Google Authentication](https://img.shields.io/badge/Google%20Authentication-Enabled-4285F4)](https://developers.google.com/identity/)
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Setup](#setup)
 
-### `npm start`
+## Setup
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Clone the repository:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+   ```bash
+   git clone https://github.com/'yourusername'/whatsapp-clone.git
+   ```
 
-### `npm test`
+   _`Note: You should fork this repo and replace with your GitHub username above.`_
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Change to frontend/client project directory:
 
-### `npm run build`
+   ```bash
+   cd whatsapp-clone/wac-frontend
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Install frontend/client dependencies:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```
+   npm install || npm i
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Start the frontend development client:
 
-### `npm run eject`
+   Within `whatsapp-clone/wac-frontend` run command:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```
+   npm start
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   _`Note: This will not work unless the backend modules are installed and the backend server is running in a different terminal.`_
