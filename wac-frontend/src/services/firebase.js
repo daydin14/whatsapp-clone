@@ -44,5 +44,6 @@ const handleGoogleLogout = async () => {
     }
 }
 
+console.log(analytics) // removes warnings for now
 
 export { auth, handleLoginWithGoogle, handleGoogleLogout };
