@@ -17,6 +17,19 @@
   font-size: 16px;
 }
 
-.login button:focus {
+.login button:focus,
+.login button:hover {
+  cursor: pointer;
+}
+
+.login > .login__footer {
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.login > .login__footer:focus,
+.login > .login__footer:hover {
   cursor: pointer;
 }
