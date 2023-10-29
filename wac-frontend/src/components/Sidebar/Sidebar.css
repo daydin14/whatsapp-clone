@@ -56,3 +56,8 @@
   background-color: white;
   overflow: scroll;
 }
+
+.logout {
+  width: 40px;
+  height: 40px;
+}

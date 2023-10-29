@@ -6,6 +6,8 @@ import { IconButton } from '@mui/material';
 import DonutLargeIcon from '@mui/icons-material/DonutLarge';
 import ChatIcon from '@mui/icons-material/Chat';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import LogoutIcon from '@mui/icons-material/Logout';
+import { handleGoogleLogout } from '../../../services/firebase';
 
 const SidebarHeaderTools = () => {
     return (
@@ -18,6 +20,9 @@ const SidebarHeaderTools = () => {
             </IconButton>
             <IconButton>
                 <MoreVertIcon />
+            </IconButton>
+            <IconButton className='logout' onClick={handleGoogleLogout} title="Logout">
+                <LogoutIcon />
             </IconButton>
         </div>
     )
