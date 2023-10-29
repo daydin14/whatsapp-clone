@@ -37,7 +37,7 @@ mongoose.connect(connection_url, {
 
 const db = mongoose.connection;
 db.once('open', () => {
-    console.log('DB is Connected');
+    console.log('DB is Open');
     const msgCollection = db.collection('messagecontents');
     const changeStream = msgCollection.watch();
 
@@ -56,6 +56,11 @@ db.once('open', () => {
         }
     });
 });
+
+db
+    .on("connected", () => console.log("Connected to MongoDB"))
+    .on("close", () => console.log("Disconnected from MongoDB"))
+    .on("error", (error) => console.log(`Error with MongoDB: ${error}`));
 
 // API Routes
 app.get("/", (req, res) => {
