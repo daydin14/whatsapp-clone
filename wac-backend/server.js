@@ -1,11 +1,13 @@
-// imports
+// Imports
 import express from 'express';
 import mongoose from 'mongoose';
-import Messages from './dbMessages.mjs';
 import cors from 'cors';
 import Pusher from 'pusher';
 
-// app configs
+// Controllers
+import dbMessagesController from './controllers/dbMessagesController.mjs';
+
+// App Configs
 const app = express();
 const port = process.env.PORT || 9000;
 const pusher = new Pusher({
@@ -16,9 +18,12 @@ const pusher = new Pusher({
     useTLS: true
 });
 
-// middleware
+// Middleware
 app.use(express.json());
 app.use(cors());
+
+// Controller Middleware
+app.use(dbMessagesController);
 
 // DB Config
 const dbName = 'WhatsApp-CloneDB';
@@ -55,25 +60,6 @@ db.once('open', () => {
 // API Routes
 app.get("/", (req, res) => {
     res.status(200).send("Hello World");
-});
-
-app.post('/messages/new', async (req, res) => {
-    try {
-        const dbMessage = req.body;
-        const data = await Messages.create(dbMessage);
-        res.status(201).send(data);
-    } catch (err) {
-        res.status(500).send(err);
-    }
-});
-
-app.get('/messages/sync', async (req, res) => {
-    try {
-        const data = await Messages.find();
-        res.status(200).send(data);
-    } catch (err) {
-        res.status(500).send(err);
-    }
 });
 
 // Listener
